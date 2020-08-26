@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:12.18-alpine'
+    }
+
+  }
   stages {
     stage('Build Angular') {
       agent {
