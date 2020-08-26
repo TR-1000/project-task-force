@@ -1,0 +1,19 @@
+
+<app-add-todo (addTodo)="addTodo($event)"> <!-- The todo form -->
+<!-- addTodo($event) sends event (calling the add todo fuction) up from
+the add-to component to the todos component through and event emitter -->
+</app-add-todo>
+
+<!-- <app-todo-item *ngFor="let todo of todos" [todo]="todo" (deleteTodo)="deleteTodo($event)">
+</app-todo-item> -->
+
+
+<div class="todo" *ngFor="let todo of todos" [todo]="todo"(deleteTodo)="deleteTodo(todo)">
+  <div class="item-row">
+    <input (change)="onToggle(todo)" type="checkbox" />
+    <a routerLink="/todos/{{ todo.id }}">
+      <span [ngClass]="setClasses(todo)">{{ todo.title }}</span>
+    </a>
+    <button (click)=onDelete(todo) type="button" class="btn btn-primary">delete</button>
+  </div>
+</div>

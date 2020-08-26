@@ -1,0 +1,12 @@
+
+<app-register (createUser)="createUser($event)">
+  <!-- Bind the child's event to the parent's method.
+  the createUser event is emitted from the register component
+  to the user component. -->
+</app-register>
+
+<h3>Users List</h3>
+
+<h5 *ngFor="let user of users">
+  <a routerLink="/users/{{ user.id }}"> {{ user.username }} </a>
+</h5>

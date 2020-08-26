@@ -1,0 +1,16 @@
+<h3>Create a New Account</h3>
+<form class="form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <!-- {{ registrationForm.get('email').errors | json }}
+  <input type="text" name="email" value="" placeholder="email"> -->
+
+  {{ registrationForm.get('username').errors | json }}
+  <input formControlName="username" placeholder="username">
+
+  {{ registrationForm.get('password').errors | json }}
+  <input formControlName="password" placeholder="password">
+
+  <!-- {{ registrationForm.get('passwordConfirm').errors | json }}
+  <input formControlName="passwordConfirm" placeholder="confirm password">
+  -->
+  <input type="submit" value="submit">
+</form>
