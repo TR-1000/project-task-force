@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('Build Angular') {
       steps {
-        sh '''npm i
-npm run build
+        sh '''# npm i
+# npm run build
+
+aws s3 ls
 '''
       }
     }
