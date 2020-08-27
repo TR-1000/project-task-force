@@ -11,7 +11,7 @@ npm run build
 
     stage('Deploy to s3') {
       steps {
-        sh '''s3Upload(file:\'project-task-force_master\', bucket:\'project-taskforce\', path:\'/var/lib/jenkins/workspace/project-task-force_master\')
+        sh '''s3Download bucket: \'project-taskforce\', file: \'project-task-force_master\', path: \'/var/lib/jenkins/workspace/project-task-force_master\'
 
 '''
       }
