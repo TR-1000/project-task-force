@@ -11,9 +11,9 @@ pipeline {
 
     stage('Deploy to s3') {
       steps {
-        sh '''s3Upload acl: \'Private\', bucket: \'project-taskforce\', cacheControl: \'\', excludePathPattern: \'\', file: \'/var/lib/jenkins/workspace/project-task-force_master\', includePathPattern: \'\', metadatas: [\'\'], redirectLocation: \'\', sseAlgorithm: \'\', tags: \'\', text: \'\', workingDir: \'\'
-'''
-      }
+            withAWS(role:'EC2-Full-S3-Accessor') {
+              s3Upload(bucket:'project-taskforce', file:'project-task-force_master', path:'/var/lib/jenkins/workspace/project-task-force_master');
+            }
     }
 
   }
