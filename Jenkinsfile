@@ -10,7 +10,7 @@ npm run build'''
 
     stage('Deploy Angular') {
       steps {
-        s3FindFiles(bucket: 'project-taskforce')
+        s3Upload(bucket: 'project-taskforce')
       }
     }
 
