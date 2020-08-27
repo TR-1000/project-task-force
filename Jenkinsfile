@@ -6,7 +6,7 @@ pipeline {
         sh '''# npm i
 # npm run build
 
-aws s3 ls
+aws s3 project-taskforce
 '''
       }
     }
