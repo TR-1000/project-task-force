@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build angular') {
       steps {
-        sh 'npm i'
+        sh '''npm i
+npm run build'''
       }
     }
 
