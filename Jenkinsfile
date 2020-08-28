@@ -6,7 +6,7 @@ pipeline {
         sh '''npm i
 npm run build
 
-cp -RT /var/lib/jenkins/workspace/project-task-force_master/dist/* /deploy
+cp -RT /var/lib/jenkins/workspace/project-task-force_master/dist/* deploy
 
 
 '''
