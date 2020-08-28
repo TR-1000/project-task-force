@@ -15,7 +15,7 @@ npm run build
 
     stage('Deploy to S3') {
       steps {
-        sh 'aws s3 cp /var/lib/jenkins/workspace/project-task-force_master/dist/project-task-force_master s3://project-taskforce --recursive --acl public-read'
+        sh 'aws s3 cp /var/lib/jenkins/workspace/project-task-force_master/dist/project-task-force s3://project-taskforce --recursive --acl public-read'
       }
     }
 
