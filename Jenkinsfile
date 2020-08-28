@@ -13,7 +13,7 @@ aws s3 cp /var/lib/jenkins/workspace/project-task-force_master s3://project-task
 
     stage('Deploy to S3') {
       steps {
-        sh '''cd /var/lib/jenkins/workspace/dist/project-task-force_master
+        sh '''cd dist/project-task-force_master
 ls
 
 # aws s3 cp /var/lib/jenkins/workspace/project-task-force_master s3://project-taskforce --recursive --acl public-read'''
