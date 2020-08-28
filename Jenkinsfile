@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''# npm i
 # npm run build
+cp /var/lib/jenkins/workspace/project-task-force_master/dist deploy/
 
 
 '''
@@ -13,10 +14,7 @@ pipeline {
 
     stage('Deploy to S3') {
       steps {
-        sh '''cd /var/lib/jenkins/workspace/project-task-force_master/dist
-ls
-
-# aws s3 cp /var/lib/jenkins/workspace/project-task-force_master s3://project-taskforce --recursive --acl public-read'''
+        sh 'aws s3 cp /deploy s3://project-taskforce --recursive --acl public-read'
       }
     }
 
